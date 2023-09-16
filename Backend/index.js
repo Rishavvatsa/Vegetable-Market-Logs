@@ -13,6 +13,7 @@ app.get("/", (req, res) => {
 });
 app.use(cookieParser());
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
  // Add parentheses to use express.json as middleware
 const PORT = process.env.PORT ||8080;
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
