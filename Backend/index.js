@@ -145,7 +145,7 @@ app.post("/create-checkout-session", async (req, res) => {
       submit_type : 'pay',
       mode : "payment",
       payment_method_types : ['card'],
-      billing_address_collection : "manual",
+      billing_address_collection : "auto",
       
 
       line_items : req.body.map((item)=>{
