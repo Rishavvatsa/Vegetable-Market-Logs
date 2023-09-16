@@ -1,0 +1,125 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+  outline: none;
+  
+  
+}
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.search-input {
+  padding: 8px 16px; 
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  font-size: 16px; 
+  background-color: #fff; 
+  color: #121111;
+  width: 300px; 
+  outline: none;
+}
+input[type="search"]::placeholder {
+  color: #dc0808;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-input {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .search-input {
+    width: 150px;
+    font-size: 14px;
+  }
+ 
+}
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.login-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.seller-login {
+  background-color: #f0f0f0;
+}
+
+
+.customer-login {
+  background-color: #f5f5f5;
+}
+
+.section{
+  display: flex;
+}
+
+body, div {
+  margin: 0;
+  padding: 0;
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+section{
+  position: relative;
+}
+ 
+

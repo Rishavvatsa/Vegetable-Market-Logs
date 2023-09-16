@@ -1,0 +1,10 @@
+/* Add these styles to your existing CSS */
+.scroll-container {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  border-radius: 15px; /* Add border radius to create a curved effect */
+  padding: 10px; /* Add padding for spacing between cards and container edges */
+  background-color: #f1f1f1; /* Set a background color for the container */
+}

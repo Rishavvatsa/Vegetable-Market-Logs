@@ -1,0 +1,109 @@
+.outer {
+  font-family: Arial, sans-serif;
+  
+}
+
+.container {
+  background-color: rgb(244, 221, 45);
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #7f3ff5;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(65, 235, 82);
+}
+
+.container.white {
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+  
+  h1 {
+    font-size: 20px;
+  }
+  
+  .col {
+    margin-right: 0;
+  }
+  
+  select {
+    font-size: 14px;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+  }
+}
+
+/* Responsive styles for screens narrower than 480px */
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 18px;
+  }
+  
+  select {
+    font-size: 12px;
+  }
+  
+  .btn {
+    padding: 6px 12px;
+  }
+}
