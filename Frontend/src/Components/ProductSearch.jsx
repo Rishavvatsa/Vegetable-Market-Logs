@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import CardFeature from "../Pages/CardFeature";
-
 
 const ProductSearch = () => {
   const location = useLocation();
@@ -20,7 +19,7 @@ const ProductSearch = () => {
       if (location.search) {
         setLoading(true);
         const res = await fetch(
-          `${process.env.REACT_APP_SERVER_DOMAIN}api/search${location.search}`
+          `${process.env.REACT_APP_SERVER_DOMAIN}/api/search${location.search}`
         );
         const data = await res.json();
         setData(data);
@@ -33,11 +32,12 @@ const ProductSearch = () => {
 
   return (
     <div className="p-2 md:p-4 relative top-20">
-       <p className="text-slate-800 font-medium py-1">Search Results : (Showing 1 – {data?.data?.length} products )</p>
+      <p className="text-slate-800 font-medium py-1">
+        Search Results : (Showing 1 – {data?.data?.length} products )
+      </p>
       <div className="gap-2 md:gap-4 flex flex-wrap justify-center">
-        {!loading && location.search  && data?.data[0] ? (
-           
-            data.data.map((el, index) => {
+        {!loading && location.search && data?.data[0]
+          ? data.data.map((el, index) => {
               return (
                 <CardFeature
                   key={el._id}
@@ -49,12 +49,9 @@ const ProductSearch = () => {
                 />
               );
             })
-          ) 
-         : (
-          loadingDataSample.map((el, index) => {
-            return <CardFeature key={"ProductSearch" + index} />;
-          })
-        )}
+          : loadingDataSample.map((el, index) => {
+              return <CardFeature key={"ProductSearch" + index} />;
+            })}
       </div>
     </div>
   );
