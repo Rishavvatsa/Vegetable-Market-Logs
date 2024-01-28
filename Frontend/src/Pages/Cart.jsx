@@ -34,7 +34,7 @@ const Cart = () => {
         "pk_test_51NhH3zSA0NxJWLDqvIt8SneTD5023LPufXUeOrwvU5qT3ttZqqZkRn0V7kEhYzzmgCttNzN8XFAZAlE9GOjpTM7h00aSFVZVeJ"
       );
       const res = await fetch(
-        `${process.env.REACT_APP_SERVER_DOMAIN}/create-checkout-session`,
+        `${process.env.REACT_APP_SERVER_DOMAIN}create-checkout-session`,
         {
           method: "POST",
           headers: {
