@@ -19,7 +19,7 @@ const ProductSearch = () => {
       if (location.search) {
         setLoading(true);
         const res = await fetch(
-          `${process.env.REACT_APP_SERVER_DOMAIN}/api/search${location.search}`
+          `${process.env.REACT_APP_SERVER_DOMAIN}api/search${location.search}`
         );
         const data = await res.json();
         setData(data);
