@@ -1,56 +1,54 @@
-import React, { useState,useEffect} from 'react';
-import axios from "axios"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 const Address = () => {
-    const [address, setAddress] = useState({
-    pincode: '',
-    phone: '',
-    houseNo: '',
-    roadName: '',
-    city: '',
-    state: '',
+  const [address, setAddress] = useState({
+    pincode: "",
+    phone: "",
+    houseNo: "",
+    roadName: "",
+    city: "",
+    state: "",
   });
 
-    
-    
-      const handleAddressChange = (e) => {
-        const { name, value } = e.target;
+  const handleAddressChange = (e) => {
+    const { name, value } = e.target;
+    setAddress((prevAddress) => ({
+      ...prevAddress,
+      [name]: value,
+    }));
+  };
+
+  const fetchCityAndState = async () => {
+    try {
+      const response = await axios.get(
+        `https://api.postalpincode.in/pincode/${address.pincode}`
+      );
+
+      if (response.data && response.data.length > 0) {
+        const city = response.data[0].PostOffice[0].District;
+        const state = response.data[0].PostOffice[0].State;
         setAddress((prevAddress) => ({
           ...prevAddress,
-          [name]: value,
+          city,
+          state,
         }));
-      };
-    
-      const fetchCityAndState = async () => {
-        try {
-          const response = await axios.get(
-            `https://api.postalpincode.in/pincode/${address.pincode}`
-          );
-    
-          if (response.data && response.data.length > 0) {
-            const city = response.data[0].PostOffice[0].District;
-            const state = response.data[0].PostOffice[0].State;
-            setAddress((prevAddress) => ({
-              ...prevAddress,
-              city,
-              state,
-            }));
-          }
-        } catch (error) {
-          console.error('Error fetching city and state:', error);
-        }
-      };
-    
-      useEffect(() => {
-        if (address.pincode.length === 6) {
-          fetchCityAndState();
-        }
-      }, [address.pincode]);
-    
+      }
+    } catch (error) {
+      console.error("Error fetching city and state:", error);
+    }
+  };
 
+  useEffect(() => {
+    if (address.pincode.length === 6) {
+      fetchCityAndState();
+    }
+  }, [address.pincode]);
 
   return (
     <div className="w-full my-4">
-      <h2 className="bg-sky-600 text-center text-white p-2 text-2xl">Shipping Address</h2>
+      <h2 className="bg-sky-600 text-center text-white p-2 text-2xl">
+        Shipping Address
+      </h2>
       <div className="flex flex-col p-4 border rounded-md shadow-md">
         <label htmlFor="pincode" className="text-lg font-semibold mb-1">
           Pin Code:
@@ -146,7 +144,7 @@ const Address = () => {
         <button
           className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
           onClick={() => {
-            // Handle address submission here
+            
           }}
         >
           Save Address

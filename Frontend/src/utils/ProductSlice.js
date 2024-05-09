@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 
 const initialState = {
   productList: [],
-  searchProductLoading : false,
+  searchProductLoading: false,
   cartItem: JSON.parse(localStorage.getItem("cart")) || [],
 };
 
@@ -14,64 +14,66 @@ export const productSlice = createSlice({
     setDataProduct: (state, action) => {
       state.productList = [...action.payload];
     },
-    handleSearchProductLoading : (state,action)=>{
-        state.searchProductLoading = action.payload
-  },
+    handleSearchProductLoading: (state, action) => {
+      state.searchProductLoading = action.payload;
+    },
     addCartItem: (state, action) => {
-      const check = state.cartItem.some((el) => el._id === action.payload._id);
+      const { cartItem } = state;
+      const check = cartItem.some((el) => el._id === action.payload._id);
       if (check) {
         toast("Already Item in Cart");
       } else {
         toast("Item Add successfully");
         const total = action.payload.price;
-        state.cartItem = [
-          ...state.cartItem,
+        const newCartItem = [
+          ...cartItem,
           { ...action.payload, qty: 1, total: total },
         ];
-        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+        state.cartItem = newCartItem;
       }
     },
-    clearCart: (state,action) => {
-      state.cartItem=[];
-      localStorage.setItem("cartItem",JSON.stringify(state.cartItem));
-      toast.error("Cart Cleared")
+    clearCart: (state) => {
+      state.cartItem = [];
+      toast.error("Cart Cleared");
     },
-    
     deleteCartItem: (state, action) => {
       toast("one Item Delete");
-      const index = state.cartItem.findIndex((el) => el._id === action.payload);
-      state.cartItem.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(state.cartItem));
-      console.log(index);
+      const newCartItem = state.cartItem.filter(
+        (item) => item._id !== action.payload
+      );
+      state.cartItem = newCartItem;
     },
     increaseQty: (state, action) => {
-      const index = state.cartItem.findIndex((el) => el._id === action.payload);
-      let qty = state.cartItem[index].qty;
-      const qtyInc = ++qty;
-      state.cartItem[index].qty = qtyInc;
-
-      const price = state.cartItem[index].price;
-      const total = price * qtyInc;
-
-      state.cartItem[index].total = total;
+      const { cartItem } = state;
+      const index = cartItem.findIndex((el) => el._id === action.payload);
+      const qty = cartItem[index].qty + 1;
+      const price = cartItem[index].price;
+      const total = price * qty;
+      cartItem[index].qty = qty;
+      cartItem[index].total = total;
     },
     decreaseQty: (state, action) => {
-      const index = state.cartItem.findIndex((el) => el._id === action.payload);
-      let qty = state.cartItem[index].qty;
-      if (qty > 1) {
-        const qtyDec = --qty;
-        state.cartItem[index].qty = qtyDec;
-
-        const price = state.cartItem[index].price;
-        const total = price * qtyDec;
-
-        state.cartItem[index].total = total;
+      const { cartItem } = state;
+      const index = cartItem.findIndex((el) => el._id === action.payload);
+      if (cartItem[index].qty > 1) {
+        const qty = cartItem[index].qty - 1;
+        const price = cartItem[index].price;
+        const total = price * qty;
+        cartItem[index].qty = qty;
+        cartItem[index].total = total;
       }
     },
-   addCartItemWithUserId :(product, userId) => async (dispatch) => {
-         dispatch(addCartItem({ ...product, userId }));
   },
-  }
+  extraReducers: (builder) => {
+    // Add logic to persist cart state to localStorage for all actions
+    builder.addMatcher(
+      (action) =>
+        action.type.startsWith("product/") && action.type !== "product/setDataProduct",
+      (state) => {
+        localStorage.setItem("cart", JSON.stringify(state.cartItem));
+      }
+    );
+  },
 });
 
 export const {
@@ -81,8 +83,7 @@ export const {
   increaseQty,
   decreaseQty,
   clearCart,
-  addCartItemWithUserId,
-  handleSearchProductLoading
+  handleSearchProductLoading,
 } = productSlice.actions;
 
 export default productSlice.reducer;

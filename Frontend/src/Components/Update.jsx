@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { toast } from 'react-hot-toast';
-import { BsCloudUpload } from 'react-icons/bs';
-import { ImagetoBase64 } from '../utils/ImagetoBase64';
+import React, { useState } from "react";
+import { toast } from "react-hot-toast";
+import { BsCloudUpload } from "react-icons/bs";
+import { ImagetoBase64 } from "../utils/ImagetoBase64";
 
 const UpdateProduct = () => {
   const [data, setData] = useState({
-    name: '',
-    category: '',
-    image: '',
-    price: '',
+    name: "",
+    category: "",
+    image: "",
+    price: "",
   });
 
   const handleOnChange = (e) => {
@@ -34,14 +34,14 @@ const UpdateProduct = () => {
     console.log(data);
 
     const { name, image, category, price } = data;
-      const productId='64db124142d6ef2654e00a12'
+    const productId = "64db124142d6ef2654e00a12";
     if (name && category && price) {
       const fetchData = await fetch(
         `${process.env.REACT_APP_SERVER_DOMAIN}api/products/${productId}`, // Replace with the actual product ID
         {
-          method: 'PUT',
+          method: "PUT",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
         }
@@ -53,13 +53,13 @@ const UpdateProduct = () => {
       toast(fetchRes.message);
 
       setData({
-        name: '',
-        category: '',
-        image: '',
-        price: '',
+        name: "",
+        category: "",
+        image: "",
+        price: "",
       });
     } else {
-      toast('Enter required fields');
+      toast("Enter required fields");
     }
   };
 
@@ -90,15 +90,25 @@ const UpdateProduct = () => {
           <option value="fruits">Fruits</option>
           <option value="vegetable">Vegetable</option>
         </select>
-        <label htmlFor='image'>Image
-        <div  className='h-40 w-full bg-slate-200  rounded flex items-center justify-center cursor-pointer'>
-            {
-              data.image ? <img src={data.image} className="h-full" alt='images'/> :<span className='text-5xl'><BsCloudUpload/></span> 
-            }
-            
-            
-           <input type={"file"} accept="image/*" id="image" onChange={uploadImage} className="hidden"/>
-        </div>
+        <label htmlFor="image">
+          Image
+          <div className="h-40 w-full bg-slate-200  rounded flex items-center justify-center cursor-pointer">
+            {data.image ? (
+              <img src={data.image} className="h-full" alt="images" />
+            ) : (
+              <span className="text-5xl">
+                <BsCloudUpload />
+              </span>
+            )}
+
+            <input
+              type={"file"}
+              accept="image/*"
+              id="image"
+              onChange={uploadImage}
+              className="hidden"
+            />
+          </div>
         </label>
         <label htmlFor="price" className="my-1">
           Price

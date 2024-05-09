@@ -3,28 +3,32 @@
 @import "tailwindcss/utilities";
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins',sans-serif;
-  outline: none;
-  
-  
+  font-family: "Roboto Slab", serif;
 }
-html{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+}
+html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
 .search-input {
-  padding: 8px 16px; 
-  border: 1px solid #ccc; 
-  border-radius: 20px; 
-  font-size: 16px; 
-  background-color: #fff; 
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  background-color: #fff;
   color: #121111;
-  width: 300px; 
+  width: 300px;
   outline: none;
 }
 input[type="search"]::placeholder {
@@ -42,7 +46,6 @@ input[type="search"]::placeholder {
     width: 150px;
     font-size: 14px;
   }
- 
 }
 .login-page {
   display: flex;
@@ -93,21 +96,20 @@ input[type="search"]::placeholder {
   cursor: pointer;
 }
 
-
 .seller-login {
   background-color: #f0f0f0;
 }
-
 
 .customer-login {
   background-color: #f5f5f5;
 }
 
-.section{
+.section {
   display: flex;
 }
 
-body, div {
+body,
+div {
   margin: 0;
   padding: 0;
 }
@@ -118,8 +120,6 @@ body, div {
   height: auto;
 }
 
-section{
+section {
   position: relative;
 }
- 
-

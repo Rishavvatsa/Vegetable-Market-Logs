@@ -1,91 +1,71 @@
-import React from 'react'
-import logo from "../assets/Untitled_logo_1_free-file (1).png"
-import { Link } from 'react-router-dom'
-import "../Css/Footer.css"
-import {FaInstagramSquare,FaFacebookSquare, FaLinkedin } from "react-icons/fa"
-import {FaXTwitter,FaSquareThreads} from "react-icons/fa6"
+import React from "react";
+import logo from "../assets/Untitled_logo_1_free-file (1).png";
+import { Link } from "react-router-dom";
 
-import pay from "../assets/catergory/pay.png"
 const Footer = () => {
   return (
-    <div className='footer'>
-    <div className='footerin1'>
-     <div className="f1">
-        <img src={logo} alt=''/>
-     </div>
-      <div className='f2'>
-        <h3>About Us</h3>
-        <Link to='/about' className='stylenone'>
-          <p>About us</p>
-        </Link>
-        <Link to='/contact' className='stylenone'>
-          <p>Contact us</p>
-        </Link>
-        <p>About team</p>
-        <p>Customer Support</p>
+    <footer className="footer p-10 bg-slate-100  text-black text-lg">
+      <div className="flex items-start flex-row gap-2 flex-wrap md:flex-col lg:flex-col sm:flex-col">
+        <aside className="flex-grow flex flex-col">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-32 border-r border-b md:border-b-0 lg:border-b-0 sm:border-r-0 mix-blend-multiply object-contain h-full fill-transparent"
+          />
+        </aside>
       </div>
-      <div className='f2'>
-
-        <h3>Our Information</h3>
-        <Link to='/privacypolicy' className='stylenone'>
-          <p>Privacy policy</p>
-        </Link>
-        <Link to='/termsandconditions' className='stylenone'>
-          <p>Terms & conditions</p>
-        </Link>
-        <p>Return Policy</p>
-        <p>Site Map</p>
-
-      </div>
-      <div className='f2'>
-  <h3>Social Links</h3>
-  <div className='social-link'>
-    <FaInstagramSquare className='social-icon' />
-    <p>Instagram</p>
-  </div>
-  <div className='social-link'>
-    <FaXTwitter className='social-icon' />
-    <p>Twitter</p>
-  </div>
-  <div className='social-link'>
-    <FaFacebookSquare className='social-icon' />
-    <p>Facebook</p>
-  </div>
-  <div className='social-link'>
-    <FaLinkedin className='social-icon' />
-    <p>Linked in</p>
-  </div>
-  <div className='social-link'>
-    <FaSquareThreads className='social-icon' />
-    <p>Threads</p>
-  </div>
-</div>
-      <div className='f2'>
-        <h3>Subscribe Now</h3>
-        <p>Subscribe your email for newsletter and featured news based on your interest</p>
-        <div className='inputcontainer'>
-          <span className='icon1'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859m-19.5.338V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H6.911a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661z" />
+      <nav>
+        <h6 className="footer-title">About Us</h6>
+        <Link className="link link-hover">About Team</Link>
+        <Link className="link link-hover">Contact Us</Link>
+        <Link className="link link-hover">Customer Support</Link>
+      </nav>
+      <nav>
+        <h6 className="footer-title">Privacy</h6>
+        <Link className="link link-hover">Policy</Link>
+        <Link className="link link-hover">Terms & Conditions</Link>
+        <Link className="link link-hover">Refund Policy</Link>
+      </nav>
+      <nav>
+        <h6 className="footer-title">Social</h6>
+        <div className="grid grid-flow-col gap-4">
+          <Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-current"
+            >
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
             </svg>
-
-          </span>
-          <input type='text' placeholder='Enter your email' />
-          <span className='icon2'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
+          </Link>
+          <Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-current"
+            >
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
             </svg>
-
-          </span>
+          </Link>
+          <Link>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              className="fill-current"
+            >
+              <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+            </svg>
+          </Link>
         </div>
-      </div>
-    </div>
-    <div className='footerin2'>
-      <h3>©2023 Copyright E-Sabjiwala, Inc.  All rights reserved</h3>
-      <img src={pay} alt='payimg' />
-    </div>
-  </div>
-  )
-}
+      </nav>
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;

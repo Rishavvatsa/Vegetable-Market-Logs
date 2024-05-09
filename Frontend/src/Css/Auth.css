@@ -1,209 +1,204 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.authpage{
-    width: 100%;
-    min-height: 80vh;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-}
-
-.authcont{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    width: 80%;
-    height: 100vh;
-    box-shadow:  0 0 10px 0 rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    margin: 0 auto;
-    margin-top: 10%;
-    margin-bottom: 10%;
-    background-color: rgba(0, 0, 0, 0.798);
+.authpage {
+  width: 100%;
+  min-height: 80vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.authcont img{
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
+.authcont {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  height: 100vh;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: rgba(0, 0, 0, 0.798);
 }
 
+.authcont img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
 
-.authform{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 20px;
-    gap: 5px;
+.authform {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding: 20px;
+  gap: 5px;
 }
 
 .authcont .formgroup {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    width: 100%;
-    margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+  margin: 10px 0px;
 }
 
-
-.authform h1{
-    font-size: 50px;
-    font-weight: 500;
-    color: rgb(114, 212, 24);
-    text-align:left;
+.authform h1 {
+  font-size: 50px;
+  font-weight: 500;
+  color: rgb(114, 212, 24);
+  text-align: left;
 }
-.authform label{
-    font-size: 17px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-}
-
-
-.authform input{
-    padding: 10px;
-    border: 1px solid white;
-    border-radius: 5px;
-    outline: none;
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    background-color: rgba(255, 255, 255, 0.042);
+.authform label {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
 }
 
-
-.authform button{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    outline: none;
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    background-color:rgb(24, 80, 212);
-    cursor: pointer;
-}
-.authform button:hover{
-    background-color: white;
-    color: black;
+.authform input {
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.042);
 }
 
-.authform p{
-    font-size: 20px;
-    font-weight: 500;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    margin: 0px;
-    padding: 0px;
-    text-align: right;
+.authform button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: rgb(24, 80, 212);
+  cursor: pointer;
 }
-.authform p:hover{
-    color: yellowgreen;
-    cursor: pointer;
+.authform button:hover {
+  background-color: white;
+  color: black;
 }
-.authform .or{
-    text-align: center;
-    margin: 10px 0px;
-    padding: 0px;
-    font-size: 20px;
-    color: white;
+
+.authform p {
+  font-size: 20px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: right;
 }
-.form-group-row{
+.authform p:hover {
+  color: yellowgreen;
+  cursor: pointer;
+}
+.authform .or {
+  text-align: center;
+  margin: 10px 0px;
+  padding: 0px;
+  font-size: 20px;
+  color: white;
+}
+.form-group-row {
+  display: flex;
+  gap: 10px;
+}
+.password-input {
+  position: relative;
+}
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-180%);
+  color: aliceblue;
+  font-size: 20px;
+  cursor: pointer;
+}
+@media (max-width: 1500px) {
+  .form-group-row {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+  }
 }
-.password-input{
-position: relative;
-}
-.password-toggle{
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-180%);
-    color: aliceblue;
-    font-size: 20px;
-    cursor: pointer;
-}
-@media (max-width: 1500px){
-    .form-group-row{
-        display: flex;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-}
-@media (max-width: 1100px){
-    .authcont{
-        flex-direction: column;
-        position: relative;
-        top: 20px;
-        /* height: 100%; */
-        width: 80%;
-        margin: 0px;
-        margin-top: 10%;
-        margin-bottom: 10%;
-        align-self: center;
-        overflow: scroll;
-        gap: 0px;
-    }
-    .authcont img{
-        width: 100%;
-        height: 40%;
-    }
-    .authform{
-        width: 100%;
-        margin: 0px;
-        padding: 10px 20px;
-        gap: 0px;
-    }
+@media (max-width: 1100px) {
+  .authcont {
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+    /* height: 100%; */
+    width: 80%;
+    margin: 0px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    align-self: center;
+    overflow: scroll;
+    gap: 0px;
+  }
+  .authcont img {
+    width: 100%;
+    height: 40%;
+  }
+  .authform {
+    width: 100%;
+    margin: 0px;
+    padding: 10px 20px;
+    gap: 0px;
+  }
 
-    .authform  label{
-        font-size: 15px;
-    }
-    .authform input{
-        font-size: 15px;
-        margin: 0px;
-    }
-    .authform button{
-        font-size: 18px;
-        padding: 10px;
-    }
-    .authform h1{
-        font-size: 35px;
-        text-align: center;
-    }
+  .authform label {
+    font-size: 15px;
+  }
+  .authform input {
+    font-size: 15px;
+    margin: 0px;
+  }
+  .authform button {
+    font-size: 18px;
+    padding: 10px;
+  }
+  .authform h1 {
+    font-size: 35px;
+    text-align: center;
+  }
 
-     .authform .formgroup{
-        margin: 5px 0px;
-    }
-    .authform p, .authform .or{
-        font-size: 15px;
-        margin: 10px 0px;
-    }
-   
+  .authform .formgroup {
+    margin: 5px 0px;
+  }
+  .authform p,
+  .authform .or {
+    font-size: 15px;
+    margin: 10px 0px;
+  }
 }
 
-
-@media (max-width: 500px){
-    .authcont{
-        flex-direction: column;
-        position: relative;
-        top: 20px;
-        height: 100%;
-        width: 97%;
-        margin: 0px;
-        margin-top: 10%;
-        margin-bottom: 10%;
-        align-self: center;
-    }
-    .authcont img{
-        width: 100%;
-        height: 30%;
-    }
-    .authform{
-        width: 100%;
-    }
+@media (max-width: 500px) {
+  .authcont {
+    flex-direction: column;
+    position: relative;
+    top: 20px;
+    height: 100%;
+    width: 97%;
+    margin: 0px;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    align-self: center;
+  }
+  .authcont img {
+    width: 100%;
+    height: 30%;
+  }
+  .authform {
+    width: 100%;
+  }
 }

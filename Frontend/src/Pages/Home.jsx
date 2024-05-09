@@ -1,24 +1,22 @@
-import React from 'react'
-import "../Css/Home.css"
+import React from "react";
+import "../Css/Home.css";
 
-import Carosel from './Carousel'
-import Homecategory from './Homecategory'
-import Footer from './Footer'
+import Homecategory from "./Homecategory";
+import Footer from "./Footer";
 
-import Menuslider from './Menuslider'
+import Menuslider from "./Menuslider";
+import HomePage from "./Homepage";
 
-
-const Home = (props) => {
+const Home = () => {
   return (
-    <>
-    
-    <Carosel/>
-    <Homecategory/>
-    <Menuslider/>
-    
-    <Footer/>
-    </>
-  )
-}
+    <div>
+      <HomePage />
+      <Homecategory />
+      <Menuslider />
 
-export default Home
+      <Footer />
+    </div>
+  );
+};
+
+export default Home;

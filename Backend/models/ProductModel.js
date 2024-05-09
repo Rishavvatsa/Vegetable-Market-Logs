@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const schemaProduct = mongoose.Schema({
-  product_id: {type: String, unique:true},
+  product_id: { type: String, unique: true },
   name: {
     type: String,
     required: [true, "Name is Required"],
@@ -11,7 +11,7 @@ const schemaProduct = mongoose.Schema({
   price: String,
   Stock: {
     type: String,
-   required: [true, "Please Enter product Stock"],
+    required: [true, "Please Enter product Stock"],
     maxLength: [4, "Stock cannot exceed 4 characters"],
     default: 0,
   },
