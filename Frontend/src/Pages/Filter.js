@@ -1,15 +1,20 @@
 import React from "react";
-import { CiForkAndKnife } from "react-icons/ci";
-
+import { GiKnifeFork } from "react-icons/gi";
 const FilterProduct = ({ category, onClick, isActive }) => {
   return (
     <div onClick={onClick}>
       <div
         className={`text-3xl p-5  rounded-full cursor-pointer ${
-          isActive ? "bg-yellow-500 text-white" : "bg-green-500 text-white "
+          isActive
+            ? "bg-white border-2 border-black text-black"
+            : "bg-black text-yellow-400 "
         }`}
       >
-        <CiForkAndKnife className={isActive ? "font-bold" : "font-extrabold"} />
+        <GiKnifeFork
+          className={
+            isActive ? "font-bold w-8 h-8 " : "font-extrabold w-8 h-8 "
+          }
+        />
       </div>
       <p className="text-center font-medium my-1 capitalize">{category}</p>
     </div>
